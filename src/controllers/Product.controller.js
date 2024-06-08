@@ -20,7 +20,6 @@ const createProduct = async (req, res) => {
   }
 };
 
-
 const getAllProducts = async (req, res) => {
   try {
     const response = await Product.find().populate("category")
@@ -39,17 +38,14 @@ const getAllProducts = async (req, res) => {
   }
 };
 
-const getByIdProducts = async (req, res) => {
+const getIdProdu = async (req, res) => {
   try {
-
     const { id } = req.body;
-
-    const response = await Product.findOne({ id })
-
+    const response = await Product.find({id})
 
     if (response) {
       return res.json({
-        message: "Products by ID list",
+        message: "Products list BY ID",
         detail: response,
       });
     }
@@ -61,11 +57,33 @@ const getByIdProducts = async (req, res) => {
   }
 };
 
+// const getByIdProducts = async (req, res) => {
+//   try {
+
+//     const { id } = req.body;
+
+//     const response = await Product.findOne({ id })
+
+
+//     if (response) {
+//       return res.json({
+//         message: "Products by ID list",
+//         detail: response,
+//       });
+//     }
+//   } catch (error) {
+//     return res.json({
+//       message: "Error",
+//       detail: error.message,
+//     });
+//   }
+// };
+
 
 
 
 module.exports = {
   createProduct,
   getAllProducts,
-  getByIdProducts,
+  getIdProdu,
 };
