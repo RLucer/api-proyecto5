@@ -24,6 +24,7 @@ const createProduct = async (req, res) => {
 const getAllProducts = async (req, res) => {
   try {
     const response = await Product.find().populate("category")
+    
     if (response) {
       return res.json({
         message: "Products list",
@@ -38,7 +39,27 @@ const getAllProducts = async (req, res) => {
   }
 };
 
+const getByIdProducts = async (req, res) => {
+  try {
+    const response = await Product.findById()
+    if (response) {
+      return res.json({
+        message: "Products by id",
+        detail: response,
+      });
+    }
+  } catch (error) {
+    return res.json({
+      message: "Error",
+      detail: error.message,
+    });
+  }
+};
+
+
+
 module.exports = {
   createProduct,
   getAllProducts,
+  getByIdProducts,
 };
