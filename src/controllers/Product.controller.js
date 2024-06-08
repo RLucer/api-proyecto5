@@ -24,7 +24,7 @@ const createProduct = async (req, res) => {
 const getAllProducts = async (req, res) => {
   try {
     const response = await Product.find().populate("category")
-    
+
     if (response) {
       return res.json({
         message: "Products list",
@@ -42,11 +42,11 @@ const getAllProducts = async (req, res) => {
 const getByIdProducts = async (req, res) => {
   try {
 
-    const { id} = req.body;
+    const { id } = req.body;
 
     const response = await Product.findOne({ id })
- 
-      
+
+
     if (response) {
       return res.json({
         message: "Products by ID list",
