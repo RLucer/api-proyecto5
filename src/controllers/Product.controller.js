@@ -42,11 +42,10 @@ const getAllProducts = async (req, res) => {
 const getByIdProducts = async (req, res) => {
   try {
 
-    const { name } = req.body;
+    const { id} = req.body;
 
-    const response = await Product.findOne({ name })
+    const response = await Product.findOne({ id })
  
-
       
     if (response) {
       return res.json({
