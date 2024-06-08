@@ -44,7 +44,7 @@ const getByIdProducts = async (req, res) => {
     const { id } = req.body;
     const idExists = await Product.findOne({ id })
    
-    if (response) {
+    if (idExists) {
       return res.json({
         message: "Products by id",
         detail: response,
@@ -57,6 +57,7 @@ const getByIdProducts = async (req, res) => {
     });
   }
 };
+
 
 
 
