@@ -47,7 +47,6 @@ const getIdProdu = async (req, res) => {
     if (response) {
       return res.json({
         message: "Products list BY ID",
-        message2: data,
         detail: response,
       });
     }
