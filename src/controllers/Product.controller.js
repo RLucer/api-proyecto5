@@ -47,8 +47,7 @@ const getByIdProducts = async (req, res) => {
     const response = await Product.findOne({ name })
  
 
-    const response = await Product.find().populate("category")
-    
+      
     if (response) {
       return res.json({
         message: "Products by ID list",
