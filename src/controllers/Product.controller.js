@@ -52,7 +52,7 @@ const getByIdProducts = async (req, res) => {
     }
   } catch (error) {
     return res.json({
-      message: `Error: ${id}`,
+      message: "Error no encontro id producto",
       detail: error.message,
     });
   }
