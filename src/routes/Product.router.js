@@ -5,7 +5,7 @@ const auth = require('../middlewares/auth');
 
 router.post('/', auth, createProduct);
 router.get('/',  getAllProducts);
-router.get('/id',  getIdProdu);
+router.post('/id',  getIdProdu);
 
 
 module.exports = router
