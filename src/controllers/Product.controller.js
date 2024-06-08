@@ -42,7 +42,7 @@ const getAllProducts = async (req, res) => {
 const getByIdProducts = async (req, res) => {
   try {
     const { id } = req.body;
-    const response = await Product.find({ id })
+    const response = await Product.findById({ id })
     if (response) {
       return res.json({
         message: "Products by id",
@@ -51,7 +51,7 @@ const getByIdProducts = async (req, res) => {
     }
   } catch (error) {
     return res.json({
-      message: "Error",
+      message: `Error: ${id}`,
       detail: error.message,
     });
   }
