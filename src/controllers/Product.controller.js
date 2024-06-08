@@ -41,20 +41,23 @@ const getAllProducts = async (req, res) => {
 
 const getByIdProducts = async (req, res) => {
   try {
-    const { id } = req.body;
 
-    const response = await Product.findOne({ id })
+    const { name } = req.body;
+
+    const response = await Product.findOne({ name })
  
+
+    const response = await Product.find().populate("category")
+    
     if (response) {
       return res.json({
-        message: "Products by id",
+        message: "Products by ID list",
         detail: response,
       });
     }
   } catch (error) {
     return res.json({
-      
-      message: "Error no encontro id producto",
+      message: "Error",
       detail: error.message,
     });
   }
