@@ -42,7 +42,8 @@ const getAllProducts = async (req, res) => {
 const getByIdProducts = async (req, res) => {
   try {
     const { id } = req.body;
-    const response = await Product.find({id})
+    const idExists = await Product.findOne({ id })
+   
     if (response) {
       return res.json({
         message: "Products by id",
