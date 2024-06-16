@@ -20,7 +20,7 @@ const payProduct = async (req, res) => {
 
         const preference = req.body
 
-        const responseMP = await mercadopago.preferences.create(preference)
+        const responseMP = await mercadopago.Preferences.create(preference)
 
         console.log(responseMP)
 
