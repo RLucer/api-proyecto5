@@ -31,7 +31,7 @@ const payProduct = async (req, res) => {
 
     } catch (error) {
         return res.json({
-            message: "Error",
+            message: "Error desde backend",
             detail: error.message,
         });
     }
