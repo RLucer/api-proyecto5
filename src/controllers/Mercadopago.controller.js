@@ -1,7 +1,6 @@
 require('dotenv').config();
 const mercadopago = require('mercadopago')
 const { update } = require('../models/Product.model');
-
 // // Requerir MercadoPagoConfig y Preference
 const { MercadoPagoConfig, Preference } = require('mercadopago');
 
