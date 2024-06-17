@@ -14,7 +14,7 @@ const { MercadoPagoConfig, Preference } = require('mercadopago');
 // });
 
 const client = new MercadoPagoConfig({
-    accessToken:'TEST-6835877501988408-061604-b5245bbe1c05815bfb81f93a88e845e0-56139632',
+    accessToken:'TEST-8258658188764151-061716-84177508924b3715b8f195e46e53a50e-1048615732',
 })
 
 
