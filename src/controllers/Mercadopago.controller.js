@@ -39,7 +39,7 @@ const payProduct = async (req, res) => {
         auto_return: "approved",
 
         };
-        const preference = new Preference(cliente);
+        const preference = new Preference(client);
         const result = await preference.create({body});
         res.json({
             id: result.id,
