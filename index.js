@@ -1,10 +1,10 @@
 require('dotenv').config();
-import cors from 'cors';
 const connectDB = require('./src/config/db.js');
 const express = require('express');
 const mongoose = require('mongoose');
 const routes = require('./src/routes/index');
 const app = express();
+const cors = require('cors');
 
 
 const port = process.env.PORT || 3000;
