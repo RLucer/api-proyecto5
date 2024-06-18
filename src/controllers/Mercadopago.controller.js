@@ -10,8 +10,6 @@ const client = new MercadoPagoConfig({
 })
 
 
-
-
 const payProduct = async (req, res) => {  
 
     try {
@@ -19,7 +17,7 @@ const payProduct = async (req, res) => {
             items:[{
                 title: req.body.title,
                 quantity: Number(req.body.quantity),
-                unit_price: Number(req.body.price),
+                unit_price: req.body.price,
                 currency_id:"CLP",
             },
         ],
