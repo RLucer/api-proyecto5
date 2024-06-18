@@ -1,5 +1,5 @@
 require('dotenv').config();
-
+const cors = require('cors');
 
 const mercadopago = require('mercadopago')
 const { update } = require('../models/Product.model');
@@ -9,6 +9,9 @@ const { MercadoPagoConfig, Preference } = require('mercadopago');
 const client = new MercadoPagoConfig({
     accessToken:process.env.accessToken,
 })
+app.use(cors());
+
+
 
 const payProduct = async (req, res) => {  
 
