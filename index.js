@@ -7,19 +7,21 @@ const cors = require('cors');
 
 
 const port = process.env.PORT || 3000;
+// Habilitar CORS
+app.use(cors());
 
-// app.use((req,res,next)=>{
-//     res.setHeader('Access-Control-Allow-Origin','*');
-//     res.setHeader('Access-Control-Allow-Methods','GET,POST,PUT,PATCH,DELETE');
-//     res.setHeader('Access-Control-Allow-Methods','Content-Type','Authorization');
-//     next(); 
-// })
+
+app.use((req,res,next)=>{
+    res.setHeader('Access-Control-Allow-Origin','*');
+    res.setHeader('Access-Control-Allow-Methods','GET,POST,PUT,PATCH,DELETE');
+    res.setHeader('Access-Control-Allow-Methods','Content-Type','Authorization');
+    next(); 
+})
 
 app.use(express.json());
 connectDB();
 
-// Habilitar CORS
-app.use(cors());
+
 
 app.use('/v1', routes);
 
